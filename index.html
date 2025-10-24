@@ -1,91 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crunchyroll-Style Profiles</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #1a1a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-    flex-direction: column;
-  }
-
-  h1 {
-    margin-bottom: 40px;
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .profiles {
-    display: flex;
-    gap: 30px;
-  }
-
-  .profile {
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #fff;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-
-  .profile:hover img {
-    transform: scale(1.1);
-    border-color: #ff7900;
-    box-shadow: 0 0 15px #ff7900;
-  }
-
-  .profile-name {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your World</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>Select a Category</h1>
-
-<div class="profiles">
-  <div class="profile" onclick="alert('Anime clicked!')">
-    <img src="https://i.pinimg.com/564x/1e/20/56/1e2056362b3d3efb71a0c20d63a5f50a.jpg" alt="Anime">
-    <div class="profile-name">Anime</div>
+  <div class="container">
+    <h1>Choose Your World!!</h1>
+    <div class="profiles">
+      <div class="profile red">Anime</div>
+      <div class="profile blue">Manga</div>
+      <div class="profile green">Cartoon</div>
+      <div class="profile yellow">Movie</div>
+      <div class="profile orange">Hentai</div>
+    </div>
   </div>
-  
-  <div class="profile" onclick="alert('Manga clicked!')">
-    <img src="https://i.pinimg.com/564x/7a/6b/50/7a6b50d11c1b2b88bba119d0f16d3b41.jpg" alt="Manga">
-    <div class="profile-name">Manga</div>
-  </div>
-  
-  <div class="profile" onclick="alert('Hentai clicked!')">
-    <img src="https://i.pinimg.com/564x/29/fc/48/29fc4868eeec7a937e626b1d1b0c3f6a.jpg" alt="Hentai">
-    <div class="profile-name">Hentai</div>
-  </div>
-  
-  <div class="profile" onclick="alert('Cartoon clicked!')">
-    <img src="https://i.pinimg.com/564x/42/b3/78/42b378a14c61e35e9c1b5db0a128dcd0.jpg" alt="Cartoon">
-    <div class="profile-name">Cartoon</div>
-  </div>
-  
-  <div class="profile" onclick="alert('Movie clicked!')">
-    <img src="https://i.pinimg.com/564x/66/5a/fd/665afdba0fc678e2e8e36ab9d53cbf87.jpg" alt="Movie">
-    <div class="profile-name">Movie</div>
-  </div>
-</div>
-
 </body>
 </html>
