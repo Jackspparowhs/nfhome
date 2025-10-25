@@ -266,8 +266,50 @@
         <!-- sp:feature:nav-btf -->
         <!-- sp:end-feature:nav-btf -->
         <!-- sp:feature:host-btf -->
-        
-        
+        <div id="dynamic-section">
+  <!-- Default content or empty -->
+</div>
+
+<div id="category-buttons">
+  <button class="category-btn" data-template="/templates/anime.html">Anime</button>
+  <button class="category-btn" data-template="/templates/manga.html">Manga</button>
+  <button class="category-btn" data-template="/templates/hentai.html">Hentai</button>
+  <button class="category-btn" data-template="/templates/cartoon.html">Cartoon</button>
+  <button class="category-btn" data-template="/templates/movie.html">Movie</button>
+  <button id="follow-us-btn">Follow Us</button>
+</div>
+        <script>
+const dynamicSection = document.getElementById('dynamic-section');
+
+function loadTemplate(path) {
+    fetch(path)
+        .then(res => res.text())
+        .then(html => {
+            dynamicSection.innerHTML = html;
+
+            // Execute scripts inside loaded template
+            const scripts = dynamicSection.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                newScript.text = oldScript.textContent;
+                document.body.appendChild(newScript);
+            });
+        })
+        .catch(err => console.error('Failed to load template:', err));
+}
+
+document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        const templatePath = btn.getAttribute('data-template');
+        loadTemplate(templatePath);
+    });
+});
+
+document.getElementById('follow-us-btn').addEventListener('click', () => {
+    window.location.href = 'https://your-backup-site.com';
+});
+</script>
                               
             </script>
 
