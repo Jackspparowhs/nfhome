@@ -1,63 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NFHome — Select Your Realm</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Video - Select Realm</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg">
-  <header class="topbar">
-    <div class="brand">prime video</div>
+<body>
+  <header>
+    <h2 class="logo">prime video</h2>
   </header>
 
-  <main id="app">
+  <div class="container">
     <h1 class="title">Select Your Realm!</h1>
-
     <div class="profiles">
-      <a class="profile" href="/anime-template/index.html" aria-label="Anime">
-        <div class="avatar">
-          <img src="/images/anime-icon.png" alt="Anime">
-        </div>
-        <div class="label">Anime</div>
-      </a>
+      <div class="profile">
+        <a href="/anime-template/index.html">
+          <img src="images/anime-icon.png" alt="Anime" />
+          <p>Anime</p>
+        </a>
+      </div>
 
-      <a class="profile" href="/manga/" aria-label="Manga">
-        <div class="avatar"><img src="/images/manga-icon.png" alt="Manga"></div>
-        <div class="label">Manga</div>
-      </a>
+      <div class="profile">
+        <a href="#">
+          <img src="images/manga-icon.png" alt="Manga" />
+          <p>Manga</p>
+        </a>
+      </div>
 
-      <a class="profile" href="/hentai/" aria-label="Hentai">
-        <div class="avatar"><img src="/images/hentai-icon.png" alt="Hentai"></div>
-        <div class="label">Hentai</div>
-      </a>
+      <div class="profile">
+        <a href="#">
+          <img src="images/hentai-icon.png" alt="Hentai" />
+          <p>Hentai</p>
+        </a>
+      </div>
 
-      <a class="profile" href="/cartoon/" aria-label="Cartoon">
-        <div class="avatar"><img src="/images/cartoon-icon.png" alt="Cartoon"></div>
-        <div class="label">Cartoon</div>
-      </a>
+      <div class="profile">
+        <a href="#">
+          <img src="images/cartoon-icon.png" alt="Cartoon" />
+          <p>Cartoon</p>
+        </a>
+      </div>
 
-      <a class="profile" href="/movie/" aria-label="Movie">
-        <div class="avatar"><img src="/images/movie-icon.png" alt="Movie"></div>
-        <div class="label">Movie</div>
-      </a>
+      <div class="profile">
+        <a href="#">
+          <img src="images/movie-icon.png" alt="Movie" />
+          <p>Movie</p>
+        </a>
+      </div>
+
+      <div class="profile">
+        <a href="#">
+          <img src="images/follow-icon.png" alt="Follow Us" />
+          <p>Follow Us</p>
+        </a>
+      </div>
     </div>
-
-    <div class="follow">
-      <a class="profile follow-us" href="/follow/">
-        <div class="avatar"><img src="/images/follow-icon.png" alt="Follow Us"></div>
-        <div class="label">Follow Us</div>
-      </a>
-    </div>
-  </main>
-
-  <script>
-    // small accessibility: keyboard click
-    document.querySelectorAll('.profile').forEach(p => {
-      p.addEventListener('keydown', e => {
-        if (e.key === 'Enter') p.click();
-      });
-    });
-  </script>
+  </div>
 </body>
 </html>
