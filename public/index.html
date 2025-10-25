@@ -8,7 +8,7 @@
     <link rel="dns-prefetch" href="https://m.media-amazon.com">
     <link rel="dns-prefetch" href="https://completion.amazon.com">
     <link rel="stylesheet" href="css/style.css">
-    <!-- kept original asset links (these are from your copy) -->
+    <!-- kept original asset links -->
     <link rel="stylesheet" type="text/css" href="https://m.media-amazon.com/images/I/818tY1Jd6ZL.css?DVWebNode_commons">
     <script type="text/javascript" src="https://m.media-amazon.com/images/I/81zVkEg-zfL.js?DVWebNode_vendors" async defer crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://m.media-amazon.com/images/I/915n4+2XzZL.js?DVWebNode_commons" async defer crossorigin="anonymous"></script>
@@ -17,17 +17,7 @@
         window.DVWebNode = window.DVWebNode || {};
         DVWebNode.pageType = 'ATVProfiles';
         DVWebNode.subPageType = 'SelectYourRealm';
-        DVWebNode.pageTypeId = undefined;
     </script>
-
-    <link rel="stylesheet" type="text/css" href="https://m.media-amazon.com/images/I/11FrrcrJ+yL.css?DVWebNode_payment-state-msg">
-    <script type="text/javascript" src="https://m.media-amazon.com/images/I/71q-g8W7rML.js?DVWebNode_payment-state-msg" defer crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://m.media-amazon.com/images/I/31atgPt14VL.css?DVWebNode_conditional-site-wide">
-    <script type="text/javascript" src="https://m.media-amazon.com/images/I/71hw8VJOKUL.js?DVWebNode_conditional-site-wide" defer crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://m.media-amazon.com/images/I/31DZWvfAm0L.css?DVWebNode_footer">
-    <script type="text/javascript" src="https://m.media-amazon.com/images/I/61tLx3o73iL.js?DVWebNode_footer" defer crossorigin="anonymous"></script>
 
     <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" name="viewport" />
@@ -37,13 +27,10 @@
     <link href="https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <title>The Skald: Select Your Realm!</title>
 
-    <!-- kept the profiles CSS and JS links you had -->
     <link rel="stylesheet" type="text/css" href="https://m.media-amazon.com/images/I/51JOfKU5fvL.css?DVWebNode_profiles">
     <script type="text/javascript" src="https://m.media-amazon.com/images/I/71rqFqhiKlL.js?DVWebNode_profiles" defer crossorigin="anonymous"></script>
 
     <style>
-        /* Minimal helper so iframe overlay doesn't break layout.
-           No changes to existing layout/palette. */
         #template-iframe {
             position: fixed;
             top: 0;
@@ -51,7 +38,7 @@
             width: 100vw;
             height: 100vh;
             border: none;
-            display: none; /* hidden until a profile is clicked */
+            display: none;
             z-index: 9998;
             background: transparent;
         }
@@ -66,28 +53,18 @@
             cursor: pointer;
             z-index: 9999;
             display: none;
-            /* do not change color scheme — inherit site styles where possible */
             background: rgba(0,0,0,0.45);
             color: #fff;
         }
     </style>
 </head>
 
-<body class="a-aui_72554-c a-aui_a11y_6_837773-c a-aui_killswitch_csa_logger_372963-c a-aui_template_weblab_cache_333406-c a-bw_aui_cxc_alert_measurement_1074111-c a-bw_aui_stepper_enable_strategies_1_1294617-c">
+<body>
     <div id="a-page">
-        <script type="a-state" data-a-state='{"key":"a-wlab-states"}'>{"AUI_72554":"C"}</script>
-        <script>typeof uex === 'function' && uex('ld', 'portal-bb', {wb: 1})</script>
-
-        <!-- kept your performance-metrics wrappers (unchanged) -->
-        <div class="DVWebNode-payment-state-msg-wrapper DVWebNode"></div>
-        <div class="DVWebNode-conditional-site-wide-wrapper DVWebNode"></div>
-
-        <!-- MAIN PROFILES MARKUP - unchanged visuals, names, images, layout -->
         <div class="DVWebNode-profiles-wrapper DVWebNode">
             <div class="_2RwnU5 dynamic-type-ramp">
                 <section class="-7OY2F ZSLIs7" data-automation-id="pv-profiles-section" data-testid="pv-profiles-section-cs">
-                    <a class="-fI1kV" href="/region/eu/storefront/ref=atv_pr_ww_home"></a>
-                    <h1 class="F7-RkU o+g-so _2XfS-V" tag="h1">Select Your Realm!</h1>
+                    <h1 class="F7-RkU o+g-so _2XfS-V">Select Your Realm!</h1>
                     <div class="qQwJX3">
                         <ul class="Ipn312">
                             <li class="VKrT9V">
@@ -135,7 +112,79 @@
                                 </button>
                             </li>
 
+                            <!-- ✅ Fixed Follow Us button -->
                             <li class="VKrT9V">
-                                <button type="button" class="_4RaUTv profile" aria-label="Follow Us" data-template="https://your-backup-site.com">
+                                <button type="button" class="_4RaUTv profile" aria-label="Follow Us" data-template="https://theskald.vercel.app/">
                                     <div class="Qc5SCH">
-                                        <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Vax_LightBlu_
+                                        <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Vax_LightBlue._CB1650303617_.png)" class="WzaCZf"></div>
+                                        <p class="nD8pHE">Follow Us</p>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <iframe id="template-iframe" title="template loader"></iframe>
+        <button id="template-back-btn" aria-label="Back to Profiles">← Back to Profiles</button>
+
+        <script>
+            (function () {
+                const iframe = document.getElementById('template-iframe');
+                const backBtn = document.getElementById('template-back-btn');
+                const profiles = Array.from(document.querySelectorAll('button[data-template].profile'));
+
+                function showIframe(src) {
+                    iframe.src = src;
+                    iframe.style.display = 'block';
+                    backBtn.style.display = 'inline-block';
+                    const wrapper = document.querySelector('.DVWebNode-profiles-wrapper');
+                    if (wrapper) wrapper.style.visibility = 'hidden';
+                    document.documentElement.style.overflow = 'hidden';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function hideIframe() {
+                    iframe.style.display = 'none';
+                    iframe.src = 'about:blank';
+                    backBtn.style.display = 'none';
+                    const wrapper = document.querySelector('.DVWebNode-profiles-wrapper');
+                    if (wrapper) wrapper.style.visibility = 'visible';
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = '';
+                }
+
+                profiles.forEach(btn => {
+                    btn.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        const template = btn.getAttribute('data-template') || '';
+                        if (!template) return;
+
+                        if (/^https?:\/\//i.test(template)) {
+                            window.open(template, '_blank', 'noopener');
+                            return;
+                        }
+                        showIframe(template);
+                    });
+                });
+
+                backBtn.addEventListener('click', hideIframe);
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape' && iframe.style.display === 'block') hideIframe();
+                });
+                iframe.addEventListener('load', () => {
+                    if (iframe.src && iframe.src !== 'about:blank') {
+                        backBtn.style.display = 'inline-block';
+                    }
+                });
+                window.__profilesHideIframe = hideIframe;
+            })();
+        </script>
+
+        <script src="js/script.js"></script>
+    </div>
+</body>
+</html>
