@@ -1,87 +1,221 @@
-<!doctype html>
-<html lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
-    <title>The Skald: Select Your Realm!</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Minimal styles for dynamic iframe and back button */
-        #dynamic-section {
-            width: 100%;
-            height: 100vh;
-            border: none;
-            display: none;
-            position: relative;
-        }
-        #back-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            padding: 8px 12px;
-            z-index: 9999;
-            display: none;
-            cursor: pointer;
-            background: #222;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-        }
-        .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Clone</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+  }
+
+  /* Header */
+  header {
+    background-color: #141414;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  header nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Profiles Section */
+  #profiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .profile {
+    width: 120px;
+    height: 120px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .profile:hover {
+    transform: scale(1.05);
+  }
+
+  .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+
+  /* Hide manage profile button */
+  .manage-profile {
+    display: none;
+  }
+
+  /* Main Content */
+  #main-content {
+    display: none;
+    padding: 100px 20px 20px 20px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .card {
+    min-width: 200px;
+    height: 300px;
+    background-color: #222;
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Scrollbar hide */
+  .cards::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 </head>
 <body>
-    <div class="DVWebNode-profiles-wrapper DVWebNode">
-        <h1>Select Your Realm!</h1>
-        <ul class="Ipn312">
-            <li><button class="profile" data-template="anime-template/index.html"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Scanlan_Purple.png"><p>Anime</p></button></li>
-            <li><button class="profile" data-template="anime-template/manga.html"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Grog_Red.png"><p>Manga</p></button></li>
-            <li><button class="profile" data-template="anime-template/hentai.html"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Keyleth_LightGreen._CB1650303617_.png"><p>Hentai</p></button></li>
-            <li><button class="profile" data-template="anime-template/cartoon.html"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Pike_LightOrange._CB1650303617_.png"><p>Cartoon</p></button></li>
-            <li><button class="profile" data-template="anime-template/movie.html"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Percy_DarkBlue.png"><p>Movie</p></button></li>
-            <li><button class="profile" data-template="https://your-backup-site.com"><img src="https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Vax_LightBlue._CB1650303617_.png"><p>Follow Us</p></button></li>
-        </ul>
+
+<header>
+  <h1>Netflix Clone</h1>
+  <nav>
+    <button id="login-btn">Login</button>
+    <button id="signup-btn">Signup</button>
+    <button class="manage-profile">Manage Profiles</button>
+  </nav>
+</header>
+
+<section id="profiles">
+  <div class="profile" data-user="User1">
+    <img src="https://via.placeholder.com/80" alt="User1">
+    <span>User1</span>
+  </div>
+  <div class="profile" data-user="User2">
+    <img src="https://via.placeholder.com/80" alt="User2">
+    <span>User2</span>
+  </div>
+  <div class="profile" data-user="User3">
+    <img src="https://via.placeholder.com/80" alt="User3">
+    <span>User3</span>
+  </div>
+</section>
+
+<main id="main-content">
+  <div class="section" id="trending">
+    <h2>Trending Now</h2>
+    <div class="cards" id="trending-cards">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
     </div>
+  </div>
 
-    <!-- Dynamic iframe and back button -->
-    <iframe id="dynamic-section"></iframe>
-    <button id="back-button">← Back to Profiles</button>
+  <div class="section" id="recommended">
+    <h2>Recommended For You</h2>
+    <div class="cards" id="recommended-cards">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </div>
 
-    <script>
-        const profilesWrapper = document.querySelector('.DVWebNode-profiles-wrapper');
-        const dynamicSection = document.getElementById('dynamic-section');
-        const backButton = document.getElementById('back-button');
+  <div class="section" id="continue-watching">
+    <h2>Continue Watching</h2>
+    <div class="cards" id="continue-cards">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </div>
+</main>
 
-        document.querySelectorAll('.profile').forEach(profile => {
-            profile.addEventListener('click', e => {
-                e.preventDefault();
-                const template = profile.getAttribute('data-template');
+<script>
+  const profiles = document.querySelectorAll('.profile');
+  const mainContent = document.getElementById('main-content');
 
-                // External link
-                if (template.startsWith('http')) {
-                    window.location.href = template;
-                    return;
-                }
+  profiles.forEach(profile => {
+    profile.addEventListener('click', () => {
+      const username = profile.getAttribute('data-user');
+      alert(username + ' selected');
+      document.getElementById('profiles').style.display = 'none';
+      mainContent.style.display = 'block';
+    });
+  });
 
-                // Load template in iframe
-                dynamicSection.style.display = 'block';
-                profilesWrapper.style.display = 'none';
-                dynamicSection.src = template;
-                backButton.style.display = 'block';
-            });
-        });
+  // Login/Signup dummy alerts
+  document.getElementById('login-btn').addEventListener('click', () => {
+    alert('Login clicked');
+  });
 
-        backButton.addEventListener('click', () => {
-            dynamicSection.style.display = 'none';
-            dynamicSection.src = '';
-            profilesWrapper.style.display = 'block';
-            backButton.style.display = 'none';
-        });
-    </script>
+  document.getElementById('signup-btn').addEventListener('click', () => {
+    alert('Signup clicked');
+  });
+
+  // Example: dynamically populate cards (can be extended)
+  const populateCards = (id, count) => {
+    const container = document.getElementById(id);
+    for (let i = 0; i < count; i++) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      container.appendChild(card);
+    }
+  };
+
+  populateCards('trending-cards', 5);
+  populateCards('recommended-cards', 5);
+  populateCards('continue-cards', 5);
+</script>
+
 </body>
 </html>
