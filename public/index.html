@@ -182,7 +182,61 @@
                 beforeMarkup: new Date()
             });
             DVWebNode.mkCXFl = DVWebNode.mkCXFl || false;
-        </script>
+        <script>
+// Create the iframe dynamically
+const dynamicSection = document.createElement('iframe');
+dynamicSection.id = 'dynamic-section';
+dynamicSection.style.width = '100%';
+dynamicSection.style.height = '100vh';
+dynamicSection.style.border = 'none';
+dynamicSection.style.display = 'none'; // hidden initially
+document.body.appendChild(dynamicSection);
+
+// Hide the profiles section when a profile is clicked
+const profilesWrapper = document.querySelector('.DVWebNode-profiles-wrapper');
+
+document.querySelectorAll('.profile').forEach(button => {
+    button.addEventListener('click', () => {
+        const template = button.getAttribute('data-template');
+        if (!template) return;
+
+        // If external URL
+        if (template.startsWith('http')) {
+            window.location.href = template;
+            return;
+        }
+
+        // Show iframe and hide profiles
+        dynamicSection.style.display = 'block';
+        profilesWrapper.style.display = 'none';
+        dynamicSection.src = template;
+    });
+});
+
+// Optional: Add a back button inside the page dynamically
+const backButton = document.createElement('button');
+backButton.textContent = '← Back to Profiles';
+backButton.style.position = 'fixed';
+backButton.style.top = '10px';
+backButton.style.left = '10px';
+backButton.style.padding = '8px 12px';
+backButton.style.zIndex = '9999';
+backButton.style.display = 'none';
+document.body.appendChild(backButton);
+
+backButton.addEventListener('click', () => {
+    dynamicSection.style.display = 'none';
+    dynamicSection.src = '';
+    profilesWrapper.style.display = 'block';
+    backButton.style.display = 'none';
+});
+
+// Show back button when iframe is displayed
+dynamicSection.addEventListener('load', () => {
+    backButton.style.display = 'block';
+});
+</script>
+
 <div class="DVWebNode-profiles-wrapper DVWebNode">
     <div class="_2RwnU5 dynamic-type-ramp">
         <section class="-7OY2F ZSLIs7" data-automation-id="pv-profiles-section" data-testid="pv-profiles-section-cs">
@@ -190,51 +244,51 @@
             <h1 class="F7-RkU o+g-so _2XfS-V" tag="h1">Select Your Realm!</h1>
             <div class="qQwJX3">
                 <ul class="Ipn312">
-                    <li class="VKrT9V" data-automation-id="ADULT-Anime-implicit-primary">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Anime" data-template="anime-template/index.html">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.2fb7d597-9c1e-4960-adf0-e948fa8e213c" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Scanlan_Purple.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Anime</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Scanlan_Purple.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Anime</p>
                             </div>
                         </button>
                     </li>
-                    <li class="VKrT9V" data-automation-id="ADULT-Manga">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Manga" data-template="anime-template/manga.html">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.fe7a83ab-484e-4276-b96d-718c2f46ceee" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Grog_Red.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Manga</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Grog_Red.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Manga</p>
                             </div>
                         </button>
                     </li>
-                    <li class="VKrT9V" data-automation-id="ADULT-Hentai">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Hentai" data-template="anime-template/hentai.html">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.266500af-7095-48e6-8947-c916dd1613c1" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Keyleth_LightGreen._CB1650303617_.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Hentai</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Keyleth_LightGreen._CB1650303617_.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Hentai</p>
                             </div>
                         </button>
                     </li>
-                    <li class="VKrT9V" data-automation-id="ADULT-Cartoon">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Cartoon" data-template="anime-template/cartoon.html">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.6e1335c3-16d1-430e-bd01-b1a8f3528ac5" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Pike_LightOrange._CB1650303617_.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Cartoon</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Pike_LightOrange._CB1650303617_.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Cartoon</p>
                             </div>
                         </button>
                     </li>
-                    <li class="VKrT9V _9aYDKB" data-automation-id="ADULT-Movie-active">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Movie" data-template="anime-template/movie.html">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.938277e1-4a29-4da3-a2ea-b1e4a3e08dbf" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Percy_DarkBlue.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Movie</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Percy_DarkBlue.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Movie</p>
                             </div>
                         </button>
                     </li>
-                    <li class="VKrT9V" data-automation-id="ADULT-Follow Us">
+                    <li class="VKrT9V">
                         <button type="button" class="_4RaUTv profile" aria-label="Follow Us" data-template="https://your-backup-site.com">
                             <div class="Qc5SCH">
-                                <div data-automation-id="avatarId-amzn1.avatar.864cc04f-fb65-4f7d-b66b-11c378945b57" style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Vax_LightBlue._CB1650303617_.png)" class="WzaCZf"></div>
-                                <p class="nD8pHE" data-automation-id="profile-item-name">Follow Us</p>
+                                <div style="background-image:url(https://m.media-amazon.com/images/G/01/digital/video/merch/TV/VXMA_2022_PVProfileImageCircle_256x256_Vax_LightBlue._CB1650303617_.png)" class="WzaCZf"></div>
+                                <p class="nD8pHE">Follow Us</p>
                             </div>
                         </button>
                     </li>
