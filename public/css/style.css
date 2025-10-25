@@ -1,1 +1,80 @@
+:root{
+  --bg:#0f1720;
+  --panel:#0b1114;
+  --muted:#c7ced6;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--muted);background:linear-gradient(180deg,#0b1114 0%, #111418 60%);min-height:100vh;}
+
+/* Top brand */
+.topbar{height:56px;display:flex;align-items:center;padding:0 18px}
+.brand{color:#fff;font-weight:600;letter-spacing:0.4px}
+
+/* Main container */
+#app{max-width:1100px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;align-items:center}
+
+/* Title: pushed down a bit for phones/desktop */
+.title{
+  font-size:34px;
+  margin:28px 0 28px; /* increased top spacing */
+  text-align:center;
+  color:#fff;
+  text-shadow:0 6px 24px rgba(0,0,0,0.45);
+  font-weight:700;
+}
+
+/* Profiles row */
+.profiles{
+  display:flex;
+  gap:36px;
+  justify-content:center;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  padding:12px 8px;
+  width:100%;
+  max-width:980px;
+}
+
+/* Single profile */
+.profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-decoration:none;
+  color:var(--muted);
+  width:120px;
+  margin:6px 6px;
+  transition:transform .18s ease, filter .18s ease;
+  cursor:pointer;
+}
+
+.profile:focus{outline:2px solid rgba(255,255,255,0.08);outline-offset:6px;border-radius:8px}
+.profile:hover{transform:translateY(-6px);filter:brightness(1.06)}
+
+/* Avatar */
+.avatar{
+  width:120px;height:120px;border-radius:999px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow:0 6px 18px rgba(0,0,0,0.6), inset 0 -6px 20px rgba(0,0,0,0.25);
+}
+
+.avatar img{width:86px;height:86px;object-fit:cover;display:block;border-radius:999px}
+
+/* Label */
+.label{margin-top:12px;font-size:16px;font-weight:600;color:#fff;text-align:center}
+
+/* Follow row */
+.follow{margin-top:34px}
+
+/* smaller screens adjustments */
+@media (max-width:640px){
+  #app{padding:60px 18px 60px}
+  .title{font-size:28px;margin-top:54px} /* push a bit more on phones */
+  .profiles{gap:20px}
+  .profile{width:92px}
+  .avatar{width:92px;height:92px}
+  .avatar img{width:68px;height:68px}
+  .label{font-size:14px}
+}
 
