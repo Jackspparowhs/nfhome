@@ -1,61 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prime Video - Select Realm</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NFHome — Select Your Realm</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-  <header>
-    <h2 class="logo">prime video</h2>
+<body class="bg">
+  <header class="topbar">
+    <div class="brand">prime video</div>
   </header>
 
-  <div class="container">
+  <main id="app">
     <h1 class="title">Select Your Realm!</h1>
+
     <div class="profiles">
-      <div class="profile">
-        <a href="/anime-template/index.html">
-          <img src="images/anime-icon.png" alt="Anime" />
-          <p>Anime</p>
-        </a>
-      </div>
+      <!-- NOTE: src points first to /images/... if not found the onerror handler will replace it with an inline SVG placeholder -->
+      <a class="profile" href="/anime-template/index.html" aria-label="Anime">
+        <div class="avatar-wrap">
+          <img src="/images/anime-icon.png" alt="Anime" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%234a2fff%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>AN</text></svg>'">
+        </div>
+        <div class="label">Anime</div>
+      </a>
 
-      <div class="profile">
-        <a href="#">
-          <img src="images/manga-icon.png" alt="Manga" />
-          <p>Manga</p>
-        </a>
-      </div>
+      <a class="profile" href="/manga/" aria-label="Manga">
+        <div class="avatar-wrap">
+          <img src="/images/manga-icon.png" alt="Manga" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ff4a4a%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>MG</text></svg>'">
+        </div>
+        <div class="label">Manga</div>
+      </a>
 
-      <div class="profile">
-        <a href="#">
-          <img src="images/hentai-icon.png" alt="Hentai" />
-          <p>Hentai</p>
-        </a>
-      </div>
+      <a class="profile" href="/hentai/" aria-label="Hentai">
+        <div class="avatar-wrap">
+          <img src="/images/hentai-icon.png" alt="Hentai" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%2399ff66%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>HT</text></svg>'">
+        </div>
+        <div class="label">Hentai</div>
+      </a>
 
-      <div class="profile">
-        <a href="#">
-          <img src="images/cartoon-icon.png" alt="Cartoon" />
-          <p>Cartoon</p>
-        </a>
-      </div>
+      <a class="profile" href="/cartoon/" aria-label="Cartoon">
+        <div class="avatar-wrap">
+          <img src="/images/cartoon-icon.png" alt="Cartoon" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ff9f3f%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>CT</text></svg>'">
+        </div>
+        <div class="label">Cartoon</div>
+      </a>
 
-      <div class="profile">
-        <a href="#">
-          <img src="images/movie-icon.png" alt="Movie" />
-          <p>Movie</p>
-        </a>
-      </div>
-
-      <div class="profile">
-        <a href="#">
-          <img src="images/follow-icon.png" alt="Follow Us" />
-          <p>Follow Us</p>
-        </a>
-      </div>
+      <a class="profile" href="/movie/" aria-label="Movie">
+        <div class="avatar-wrap">
+          <img src="/images/movie-icon.png" alt="Movie" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%2300b3ff%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>MV</text></svg>'">
+        </div>
+        <div class="label">Movie</div>
+      </a>
     </div>
-  </div>
+
+    <div class="follow">
+      <a class="profile follow-us" href="/follow/">
+        <div class="avatar-wrap">
+          <img src="/images/follow-icon.png" alt="Follow Us" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%235c9fff%22/><text x=%2250%22 y=%2258%22 font-size=%2242%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>+</text></svg>'">
+        </div>
+        <div class="label">Follow Us</div>
+      </a>
+    </div>
+  </main>
+
 </body>
 </html>
